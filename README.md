@@ -1,5 +1,5 @@
 # ExceptionHandler
-A library to assist when a unhandled exception occurs in the program. Automatically sends notification to your Android phone when an error occurs. Also provides method to send notification to phone for info, warning etc.
+A library to assist when a unhandled exception occurs in the program. Automatically sends notification to your Android phone when an error occurs. Also provides method to send notification to phone for info, warning etc. (<b>Not limited only to exceptions)
 
 Currently supports Java and Python.
 
