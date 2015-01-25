@@ -1,8 +1,8 @@
 # ExceptionHandler - Python
-This is py lib Exception handler.
+This is python library for Exception handler.
 
 #Features
-- Send notification to Android phone (Requires installing Android)
+- Send notification to Android phone (Requires installing Android app)
 - Search stackoverflow for error occured
 
 #Usage
