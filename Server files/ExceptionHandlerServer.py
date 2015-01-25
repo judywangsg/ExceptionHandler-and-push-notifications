@@ -1,14 +1,17 @@
+
+"""
+This is a simple server written using flask. The listens and forwards the request to Google cloud messaging server.
+Author : Palaniappan (palaniappan.feb22@gmail.com)
+"""
+
 from flask import Flask,request
 import json
 import urllib2
 import datetime
 from time import strftime
-
 app = Flask(__name__)
 
-#reg_ids = ['APA91bFQlavXTnIFW9TRB0RNszYfkFFg-D4ePT6T0dV4nJfWHwubGP5K4oGPZnK8hMkBRQx15VK0QTlPONylKaS3Vdp0Jhf0B0SP0iomf0Ty8EjAHMbkfa03-3XjhmM3irzrTsBOd1iT20AK2JAwGgONPC9VWcrytuKsihlqJMN0Y5TXgbZ1m2E']
-
-reg_ids = []
+reg_id = []
 
 @app.route('/sendMsg', methods = ['POST'])
 def sendMsg():
