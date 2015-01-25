@@ -1,14 +1,11 @@
 # ExceptionHandler
-A java library to search stackoverflow when a unhandled exception occurs in the program.
+A library to assist when a unhandled exception occurs in the program. Automatically sends notification to your Android phone when an error occurs. Also provides method to send notification to phone for info, warning etc.
 
-The results (stackoverflow search results with links to them) will be printed to the passed PrintStream.
+Currently supports Java and Python.
 
-#Usage
-Add the following code to your program.
+#Features
+- Send notification to your Android phone (This requires installing android app)
+- Search Stackoverflow for questions related to Exception occured.
+- Uses only web services, so this is language independent.
 
-		//printStream to output results, logs etc
-		  ExceptionHandler handler = new ExceptionHandler(System.out);
-		  handler.showStackOverFlowQuestions(true);
-	 	  handler.openGoogleSearch(false);
-		  Thread.setDefaultUncaughtExceptionHandler(handler);
-	
+
