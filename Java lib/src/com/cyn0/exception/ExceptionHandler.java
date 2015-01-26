@@ -89,13 +89,14 @@ public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
 			    
 					ArrayList<StackoverflowItems> response = StackOverFlow.getStackOverFlowSuggestions(q);
 					for(StackoverflowItems item : response){
-						
+						printStream.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 						if(item.getScore() >= minimumScore){
 							printStream.println();
 							printStream.println(item.getTitle());
 							printStream.println(item.getLink());
 							printStream.println();
 						}
+						printStream.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 					}
 				
 		    }
@@ -105,8 +106,13 @@ public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
 				openGoogleSearch(q);
 		    }
 		    if(sendCloudNotification){
-		    	if(!cloudID.equals(""))
-		    		CloudMessage.sendCloudMessage(title, q, CloudMessage.TAG_ERROR,serverURL, cloudID);
+		    	if(!cloudID.equals("")){
+		    		Boolean success = CloudMessage.sendCloudMessage(title, q, CloudMessage.TAG_ERROR,serverURL, cloudID);
+		    		if(success)
+		    			printStream.println("Message sent successfully");
+		    		else
+		    			printStream.println("Fatal : Message not delivered");
+		    	}
 		    	else
 		    		printStream.println("Please set cloudID to send notification to your phone");
 		    }
@@ -128,8 +134,13 @@ public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
 		printStream.println("--->" + cloudID);
 		if(cloudID.equals("") || cloudID.equals("<Your cloudID goes here>"))
 			printStream.println("Please set cloudID to send notification to your phone");
-		else
-    		CloudMessage.sendCloudMessage(title, message, msgTag, serverURL, cloudID);
+		else{
+    		Boolean success = CloudMessage.sendCloudMessage(title, message, msgTag, serverURL, cloudID);
+    		if(success)
+    			printStream.println("Message sent successfully");
+    		else
+    			printStream.println("Fatal : Message not delivered");
+		}
 	}
 	
 	
