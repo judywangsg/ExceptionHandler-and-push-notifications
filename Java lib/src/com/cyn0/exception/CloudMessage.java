@@ -22,7 +22,17 @@ public class CloudMessage {
 	final public static String TAG_WARNING = "WARNING";
 	final public static String TAG_INFO = "INFO";
 	
-	public static void sendCloudMessage(String title, String msg, String type,String serverUrl, String cloudId) throws Exception {
+	/*
+	 * Method to send cloud message to Android phone.
+	 * @param title
+	 * @param msg
+	 * @param type : type of the msg, TAG_ERROR, TAG_WARNING, or TAG_INFO
+	 * @param serverUrl : url of the server that forwards cloud message
+	 * @param CloudId : device id obtained from Android app
+	 * 
+	 *  @return where the message was successfully delivered
+	 */
+	public static Boolean sendCloudMessage(String title, String msg, String type,String serverUrl, String cloudId) throws Exception {
 		 
 		final String url = serverUrl;
 		
@@ -50,8 +60,8 @@ public class CloudMessage {
 		wr.close();
  
 		int responseCode = connection.getResponseCode();
-		System.out.println("\nSending 'POST' request to URL : " + url);
-		System.out.println("Post parameters : " + urlParameters);
+		//System.out.println("\nSending 'POST' request to URL : " + url);
+		//System.out.println("Post parameters : " + urlParameters);
 		System.out.println("Response Code : " + responseCode);
  
 		BufferedReader in = new BufferedReader(
@@ -65,15 +75,12 @@ public class CloudMessage {
 		in.close();
  
 		//print result
-		System.out.println(response.toString());
+		//System.out.println(response.toString());
 		
 		JSONObject res = (JSONObject) JSONValue.parse(response.toString());
-		int success = (int) res.get("success");
-		if(success > 0){
-			System.out.println("Message sent successfully");
-		}else{
-			System.out.println("Fatal : Message not delivered");
-		}
+		int success = ((Long)res.get("success")).intValue();
+		if(success > 0)	return true;
+		else return false;
 	}
 
 }
