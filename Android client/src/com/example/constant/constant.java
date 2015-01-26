@@ -3,7 +3,7 @@ package com.example.constant;
 public class constant {
 	public static final String ServerAddress = "http://54.149.149.26:5000"; 
 	// Google Project Number
-	public	static final String GOOGLE_PROJECT_ID = "675435775839";
+	public	static final String GOOGLE_PROJECT_ID = "Your Google project id";
 	public	static final String MESSAGE_TITLE = "title";
 	public	static final String MESSAGE_LINK = "link";
 	public	static final String MESSAGE_MSGTYPE = "msgtype";
