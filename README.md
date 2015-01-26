@@ -5,7 +5,7 @@ Currently supports <b>Java</b> and <b>Python</b>.
 
 This library is more suitable for automated scripts/programs or the ones that runs forever, where you can be notified when something happens instead of you repeatedly looking into log files.
 
-Also during development, when an error occurs it searches stackoverflow site and provides results.
+Also during development, when an error occurs it <b>searches stackoverflow site and provides results</b>.
 
 #Features
 - Send notification to your Android phone (This requires installing android app)
