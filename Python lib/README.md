@@ -6,8 +6,7 @@ This is python library for Exception handler.
 - Search stackoverflow for error occured
 
 #Usage
-Download <a ref="https://github.com/cyn0/ExceptionHandler/releases/download/0.1/ExceptionHandler-v0.1-beta.apk">Android client</a>. 
-See Sample.py for usage
+Download <a href="https://github.com/cyn0/ExceptionHandler/releases/download/0.1/ExceptionHandler-v0.1-beta.apk">Android client</a> and see Sample.py for usage
 
 To catch all uncaught exceptions and automatically send notification
 ```       
