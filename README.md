@@ -13,4 +13,8 @@ Also during development, when an error occurs it searches stackoverflow site and
 - Search Stackoverflow for questions related to Exception occured.
 - Uses only web services, so this is language independent.
 
-![alt tag](https://github.com/cyn0/ExceptionHandler/blob/master/Android%20client/screen%20shot/Screenshot_2015-01-25-21-31-21.png =200x100)
+
+<img src="https://github.com/cyn0/ExceptionHandler/blob/master/Android%20client/screen%20shot/Screenshot_2015-01-25-21-31-21.png" width="200" height="200" />
+
+
+![alt tag](https://github.com/cyn0/ExceptionHandler/blob/master/Android%20client/screen%20shot/Screenshot_2015-01-25-21-31-21.png)
