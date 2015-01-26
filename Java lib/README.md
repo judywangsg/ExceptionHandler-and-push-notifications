@@ -6,7 +6,7 @@ A java library for Exception Handler
 - Search stackoverflow for error occured
 
 #Usage
-Download the <a href="https://github.com/cyn0/ExceptionHandler/releases/download/0.1/ExceptionHandler-0.1.jar">Jar files</a>
+Download the <a href="https://github.com/cyn0/ExceptionHandler/releases/download/0.1/ExceptionHandler-v0.1-beta.jar">Jar file</a> and <a href="https://github.com/cyn0/ExceptionHandler/releases/download/0.1/ExceptionHandler-v0.1-beta.apk">Android client</a>
 
 Go through ExceptionHandlerExample for usage.
 The results(stackoverflow search results with links to them), logs will be printed to the passed PrintStream.
