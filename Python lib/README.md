@@ -1,4 +1,4 @@
-# ExceptionHandler - Python
+# Exception handler  and push notifications
 This is python library for Exception handler.
 
 #Features
