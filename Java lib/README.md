@@ -1,4 +1,4 @@
-# ExceptionHandler
+# Exception Handler and push notifications
 A java library for Exception Handler
 
 #Features
