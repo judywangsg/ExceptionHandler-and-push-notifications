@@ -12,6 +12,6 @@ Download the <a href="https://github.com/cyn0/ExceptionHandler/releases/download
 Send Notification to phone.
 ```
 	var pushnotification = require('./PushNotification');	
-	pushnotification.sendPushNotification('This is the title', 'this is the msg', 'ERROR', id);
+	pushnotification.sendPushNotification('This is the title', 'this is the msg', pushnotification.TAG_ERROR, id);
 ```
 
