@@ -60,27 +60,38 @@ public class CloudMessage {
 		wr.close();
  
 		int responseCode = connection.getResponseCode();
-		//System.out.println("\nSending 'POST' request to URL : " + url);
-		//System.out.println("Post parameters : " + urlParameters);
-		System.out.println("Response Code : " + responseCode);
- 
-		BufferedReader in = new BufferedReader(
-		        new InputStreamReader(connection.getInputStream()));
-		String inputLine;
-		StringBuffer response = new StringBuffer();
- 
-		while ((inputLine = in.readLine()) != null) {
-			response.append(inputLine);
-		}
-		in.close();
- 
-		//print result
-		//System.out.println(response.toString());
 		
-		JSONObject res = (JSONObject) JSONValue.parse(response.toString());
-		int success = ((Long)res.get("success")).intValue();
-		if(success > 0)	return true;
-		else return false;
+		//System.out.println("Response Code : " + responseCode);
+ 
+		if (responseCode >= 500) {
+			System.out.println("GCM service is unavailable (500)");
+			return false;
+		}else if (responseCode == 401) {
+			System.out.println("Unauthorized (401). Check that your API token is correct.");
+			return false;
+		}else if(responseCode != 200){
+			System.out.println("Invalid request");
+			return false;
+		}else{ // responseCode == 200
+			
+			BufferedReader in = new BufferedReader(
+			        new InputStreamReader(connection.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+	 
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+	 
+			//print result
+			//System.out.println(response.toString());
+			
+			JSONObject res = (JSONObject) JSONValue.parse(response.toString());
+			int success = ((Long)res.get("success")).intValue();
+			if(success > 0)	return true;
+			else return false;
+		}
 	}
 
 }
