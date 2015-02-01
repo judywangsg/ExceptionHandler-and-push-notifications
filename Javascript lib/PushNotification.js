@@ -1,6 +1,6 @@
 var request = require('request');
 var serverUrl = 'http://54.149.149.26:5000/sendMsg';
-//'APA91bFQlavXTnIFW9TRB0RNszYfkFFg-D4ePT6T0dV4nJfWHwubGP5K4oGPZnK8hMkBRQx15VK0QTlPONylKaS3Vdp0Jhf0B0SP0iomf0Ty8EjAHMbkfa03-3XjhmM3irzrTsBOd1iT20AK2JAwGgONPC9VWcrytuKsihlqJMN0Y5TXgbZ1m2E'
+
 var sendPushNotification = function(title, msg, type, id, callback){
 	var date = new Date();
 	var curTime = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
